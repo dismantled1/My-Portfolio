@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayushman Pratap Singh | Portfolio</title>
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  integrity="sha512-..."
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init("ApmZ2a9nSlwGPUfWm");</script>
+</head>
+
+<!-- Floating Resume Button -->
+    <div class="resume-float-container">
+       <button class="resume-btn magnetic" id="resumeBtn">
+        <div class="resume-btn-dot"></div>
+        <i class="fa-solid fa-file-pdf"></i>
+        <span>RESUME</span>
+    </button>
+</div>
+
+    <!-- Resume Modal -->
+    <div class="resume-modal" id="resumeModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <h3>RESUME</h3>
+                <p>Aayushman Pratap Singh</p>
+            </div>
+            <div class="modal-body">
+                <iframe src="resume.pdf" id="resumeFrame"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="resume.pdf" download="Aayushman_Pratap_Singh_Resume.pdf" class="download-btn">
+                    <i class="fa-solid fa-download"></i>
+                    <span>DOWNLOAD RESUME</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<body>
+
+    <div id="customCursor"></div>
+    <canvas id="smokeCanvas"></canvas>
+    <div class="bg-image"></div>
+
+    <nav>
+        <div class="logo">AAYUSHMAN<span style="color:var(--ferrari-red)">.</span></div>
+        <div class="socials">
+            <div class="indivi"><a href="https://www.linkedin.com/in/aayushman-singh-63a975228/"target="_blank" style="color:#ffffff"> <i class="fa-brands fa-linkedin" ></i></a> </div>
+            <div class="indivi"><a href="https://www.instagram.com/aayushmanpsingh/"target="_blank" style="color:#ffffff"> <i class="fa-brands fa-instagram" ></i> </div>
+            <div class="indivi"><a href="https://github.com/dismantled1"target="_blank" style="color:#ffffff"> <i class="fa-brands fa-github" ></i></a> </div>
+            <div class="indivi"><a href="https://leetcode.com/u/aayushmanpratapsingh/"target="_blank" style="color:#ffffff"> <i class="fa-brands fa-leetcode"></i></a> </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="typewriter-text" style="color:var(--ferrari-red); font-weight:bold; letter-spacing:3px; font-size: 0.9rem;">// ACADEMIC SPEC: THIRD YEAR UNDERGRADUATE</span>
+        <div class="name-container">
+            <div class="racing-accent"></div>
+            <h1 class="highlight-name glitch" data-text="Aayushman Pratap Singh">Aayushman Pratap Singh</h1>
+        </div>
+        <p style="max-width: 700px; line-height: 1.8; font-size: 1.2rem; opacity: 0.9;">
+           Computer Science Engineer specializing in high-performance systems. 
+            From <b>Python-based Data Analysis</b> to <b>SAP S/4HANA ERP Fundamentals</b>, 
+            I build digital engines that are engineered for reliability and speed.
+        </p>
+
+        
+    </header>
+
+    
+    <section id="experience">
+        <h2>THE RACE LOG</h2>
+        <span class="sub-header">CAREER TRACK RECORD</span>
+        <div class="grid">
+            <div class="card">
+                <h3>Content Team Co-Lead</h3>
+                <p><strong>Computer Society of India</strong> | 2024 - 2025</p>
+                <ul style="margin-top:15px; padding-left: 20px; font-size: 0.9rem;">
+                    <li>Led technical documentation for Hackstasy '25.</li>
+                    <li>Synchronized sponsors and participants like a pit-crew chief.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Core Member</h3>
+                <p><strong>Computer Society of India</strong> | Jan - Sep 2024</p>
+                <ul style="margin-top:15px; padding-left: 20px; font-size: 0.9rem;">
+                    <li>Anchored coding events and technical flow planning.</li>
+                    <li>Developed technical content for hackathon scaling.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-section" id="technical">
+        <h2>TECHNICAL SPECS</h2>
+        <span class="sub-header">POWER UNIT COMPONENTS</span>
+        <div class="grid">
+            <div class="card">
+                <h4 style="color:var(--ferrari-red)">LANGUAGES</h4>
+                <p>Python, Java, C, C++, SQL</p>
+            </div>
+            <div class="card">
+                <h4 style="color:var(--ferrari-red)">DATA SCIENCE</h4>
+                <p>Pandas, NumPy, Data Cleaning, Excel Analysis</p>
+            </div>
+            <div class="card">
+                <h4 style="color:var(--ferrari-red)">INFRASTRUCTURE</h4>
+                <p>SAP S/4HANA, Django, GitHub, VS Code</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="dark-section" id="contact" style="border-top: 1px solid #222;">
+        <h2>PIT-STOP TELEMETRY</h2>
+        <span class="sub-header">SECURE COMMS CHANNEL</span> 
+        <div class="telemetry-dashboard">
+            <div class="telemetry-sidebar">
+                <div class="stat-box scanline-overlay">
+                    <span class="label">ENGINE STATUS</span>
+                    <span class="value green-glow">OPTIMAL</span>
+                </div>
+                <div class="stat-box scanline-overlay">
+                    <span class="label">LOCATION</span>
+                    <span class="value">GHAZIABAD, INDIA</span>
+                </div>
+                <div class="stat-box scanline-overlay">
+                    <span class="label">LATENCY</span>
+                    <span class="value">12MS</span>
+                </div>
+                <div class="counter-row">
+                     <div class="counter-box">
+                        <span class="counter-num" data-target="1">0</span>
+                        <span class="counter-lbl">Yr. Exp</span>
+                    </div>
+                    <div class="counter-box">
+                        <span class="counter-num" data-target="5">0</span>
+                        <span class="counter-lbl">Languages</span>
+                    </div>
+                    <div class="counter-box">
+                        <span class="counter-num" data-target="2">0</span>
+                        <span class="counter-lbl">Projects</span>
+                    </div>
+                </div>
+            </div>
+      
+
+            <form class="contact-form" id="pitStopForm">
+                <div class="input-group">
+                    <label>IDENTIFIER (NAME)</label>
+                    <input type="text" placeholder="RECRUITER / GUEST" required>
+                </div>
+                <div class="input-group">
+                    <label>RETURN SIGNAL (EMAIL)</label>
+                    <input type="email" placeholder="YOUR EMAIL ADDRESS" required>
+                </div>
+                <div class="input-group">
+                    <label>MISSION BRIEF (MESSAGE)</label>
+                    <textarea rows="3" placeholder="YOUR MESSAGE..."></textarea>
+                </div>
+                <button type="submit" class="race-btn particle-burst">INITIATE LAUNCH (SEND)</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 10%; background: #000; text-align: center; font-size: 0.8rem; color: #555;">
+        <p>AAYUSHMAN PRATAP SINGH // SRMIST // as7310@srmist.edu.in // +91-9968347111</p>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
