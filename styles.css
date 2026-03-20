@@ -823,38 +823,43 @@ body > *:nth-child(3) { animation-delay: 0.3s; }
  
 /* ========== RESPONSIVE DESIGN ========== */
 
-/* --- TABLET: 481px – 1024px --- */
+/* Make hero position relative so speedometer positions correctly */
+.hero { position: relative; }
+
+/* ── TABLET: 481px – 1024px ── */
 @media (max-width: 1024px) {
 
     /* Nav */
-    nav {
-        padding: 14px 5%;
-    }
-    .logo {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-    }
-    .socials {
-        margin-left: 40px;
-    }
-    .indivi {
-        font-size: 1.5rem;
-        padding: 0 8px;
-    }
+    nav { padding: 14px 5%; }
+    .logo { font-size: 1.2rem; letter-spacing: 2px; }
+    .socials { margin-left: 20px; }
+    .indivi { font-size: 1.5rem; padding: 0 8px; }
 
     /* Hero */
     .hero {
-        padding: 0 6%;
+        padding: 60px 6% 60px;
         height: auto;
         min-height: 90vh;
+        justify-content: center;
     }
+
+    /* Speedometer — inline below text on tablet */
+    .speedo-wrap {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 36px;
+        opacity: 1;
+        animation: none;
+        align-self: flex-start;
+    }
+    .speedo-svg { width: 170px; }
 
     /* Sections */
-    section {
-        padding: 70px 6%;
-    }
+    section { padding: 70px 6%; }
 
-    /* Grid — 2 cols max on tablet */
+    /* Grid */
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 24px;
@@ -868,208 +873,275 @@ body > *:nth-child(3) { animation-delay: 0.3s; }
     }
 
     /* Cards */
-    .card {
-        padding: 30px;
-    }
+    .card { padding: 30px; }
 
     /* h2 */
-    h2 {
-        font-size: 2rem;
-    }
+    h2 { font-size: 2rem; }
 
     /* Resume Modal */
-    .modal-content {
-        width: 96%;
-        height: 92vh;
-        padding: 18px;
-    }
-    .modal-header h3 {
-        font-size: 1.6rem;
-    }
+    .modal-content { width: 96%; height: 92vh; padding: 18px; }
+    .modal-header h3 { font-size: 1.6rem; }
 
     /* Resume Button */
-    .resume-float-container {
-        bottom: 24px;
-        right: 24px;
-    }
+    .resume-float-container { bottom: 24px; right: 24px; }
 }
 
-/* --- PHONE: up to 480px --- */
+/* ── PHONE: up to 480px ── */
 @media (max-width: 480px) {
 
-    /* Disable custom cursor on touch devices */
+    /* Disable custom cursor — touch doesn't need it */
     #customCursor,
     .cursor-trail {
         display: none !important;
     }
-    body {
-        cursor: auto;
-    }
+    body { cursor: auto; }
 
-    /* Nav — stack logo left, icons right, tighter */
+    /* Disable smoke canvas on phone — performance */
+    #smokeCanvas { display: none; }
+
+    /* ── NAV ── */
     nav {
         padding: 12px 5%;
         flex-wrap: nowrap;
-        gap: 10px;
+        gap: 8px;
+        justify-content: space-between;
     }
     .logo {
-        font-size: 1rem;
+        font-size: 0.95rem;
         letter-spacing: 2px;
         flex-shrink: 0;
     }
     .socials {
         margin-left: 0;
         gap: 0;
+        flex-wrap: nowrap;
     }
     .indivi {
-        font-size: 1.3rem;
-        padding: 0 6px;
+        font-size: 1.15rem;
+        padding: 0 5px;
+    }
+    /* Prevent stagger animation overflow on small screens */
+    .indivi:hover {
+        transform: scale(1.3) translateY(-3px) !important;
     }
 
-    /* Hero */
+    /* ── HERO ── */
     .hero {
-        padding: 40px 5% 60px;
+        padding: 50px 5% 50px;
         height: auto;
-        min-height: 85vh;
-        justify-content: flex-end;
+        min-height: 90vh;
+        justify-content: center;
     }
     .hero > span {
-        font-size: 0.7rem !important;
+        font-size: 0.65rem !important;
         letter-spacing: 1.5px !important;
+        display: block;
+        margin-bottom: 4px;
     }
-    .name-container {
-        margin: 14px 0;
-    }
+    /* Hide blinking cursor block on very small screens */
+    .hero > span::after { display: none; }
+
+    .name-container { margin: 12px 0; }
+
     .highlight-name {
-        font-size: clamp(2rem, 10vw, 3rem);
-        padding: 8px 10px;
+        font-size: clamp(1.8rem, 9vw, 2.8rem);
+        padding: 6px 8px;
     }
     .hero p {
-        font-size: 0.95rem !important;
-        line-height: 1.7;
+        font-size: 0.88rem !important;
+        line-height: 1.75;
+        max-width: 100% !important;
     }
 
-    /* Sections */
-    section {
-        padding: 55px 5%;
-    }
+    /* Speedometer — hidden on phone, too cramped */
+    .speedo-wrap { display: none; }
 
-    /* h2 */
+    /* ── SECTIONS ── */
+    section { padding: 50px 5%; }
+
     h2 {
-        font-size: 1.6rem;
-        letter-spacing: 0px;
+        font-size: 1.55rem;
+        letter-spacing: 0;
     }
     .sub-header {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         letter-spacing: 2px;
+        display: block;
+        margin-top: 6px;
     }
 
-    /* Grid — single column on phone */
+    /* ── GRID → SINGLE COLUMN ── */
     .grid {
         grid-template-columns: 1fr;
-        gap: 18px;
-        margin-top: 28px;
+        gap: 16px;
+        margin-top: 24px;
     }
 
-    /* Cards */
-    .card {
-        padding: 24px 20px;
-    }
-    /* Disable 3D tilt on touch — it sticks */
+    /* ── CARDS ── */
+    .card { padding: 22px 18px; }
+
+    /* Disable 3D tilt on touch — it sticks permanently */
     .card:hover {
-        transform: translateY(-6px) scale(1);
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    .card:hover h3,
+    .card:hover h4 {
+        transform: none !important;
     }
 
-    /* Telemetry — stack vertically */
+    /* ── TELEMETRY DASHBOARD ── */
     .telemetry-dashboard {
         grid-template-columns: 1fr;
-        padding: 18px;
-        gap: 14px;
+        padding: 16px;
+        gap: 12px;
     }
+
+    /* Sidebar: 2-column grid for stat boxes */
     .telemetry-sidebar {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
+
     /* 3rd stat box spans full width */
-    .telemetry-sidebar .stat-box:last-child {
+    .telemetry-sidebar .stat-box:nth-child(3) {
         grid-column: 1 / -1;
     }
+
     .stat-box {
-        padding: 12px;
+        padding: 12px 10px;
         margin-bottom: 0;
     }
     .stat-box .label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
     }
     .stat-box .value {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
+        margin-top: 4px;
+        display: block;
     }
 
-    /* Contact form */
+    /* Counter row — 3 equal boxes */
+    .counter-row {
+        gap: 8px;
+        margin-top: 12px;
+    }
+    .counter-box {
+        padding: 10px 8px;
+        min-width: 0;
+    }
+    .counter-num { font-size: 1.4rem; }
+    .counter-lbl { font-size: 0.52rem; letter-spacing: 1px; }
+
+    /* ── CONTACT FORM ── */
     .contact-form input,
     .contact-form textarea {
         font-size: 0.85rem;
-        padding: 10px;
+        padding: 10px 12px;
+        margin-bottom: 14px;
     }
+    .contact-form label {
+        font-size: 0.62rem;
+        letter-spacing: 1.5px;
+        display: block;
+        margin-bottom: 6px;
+        color: #888;
+    }
+    .input-group { margin-bottom: 4px; }
+
     .race-btn {
         padding: 14px;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         letter-spacing: 1.5px;
     }
 
-    /* Footer */
+    /* ── FOOTER ── */
     footer {
-        padding: 30px 5% !important;
-        font-size: 0.72rem !important;
-        line-height: 1.8;
+        padding: 28px 5% !important;
+        font-size: 0.68rem !important;
+        line-height: 2;
+    }
+    footer p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
     }
 
-    /* Resume button — smaller, lower */
+    /* ── RESUME BUTTON ── */
     .resume-float-container {
-        bottom: 18px;
-        right: 18px;
+        bottom: 16px;
+        right: 16px;
     }
     .resume-btn {
-        padding: 11px 16px;
-        font-size: 0.65rem;
-        letter-spacing: 3px;
-        gap: 8px;
+        padding: 10px 14px;
+        font-size: 0.6rem;
+        letter-spacing: 2.5px;
+        gap: 7px;
     }
-    .resume-btn-dot {
-        width: 6px;
-        height: 6px;
-    }
+    .resume-btn-dot { width: 6px; height: 6px; }
+    .resume-btn i { font-size: 0.75rem; }
 
-    /* Resume Modal — full screen feel */
+    /* ── RESUME MODAL ── */
+    .resume-modal.active {
+        align-items: flex-end;
+    }
     .modal-content {
         width: 100%;
-        height: 100dvh;
-        border-radius: 0;
+        height: 96dvh;
+        border-radius: 16px 16px 0 0;
         padding: 14px;
         border-left: none;
         border-right: none;
+        border-bottom: none;
     }
     .modal-header h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         letter-spacing: 2px;
     }
-    .modal-header p {
-        font-size: 0.78rem;
-    }
+    .modal-header p { font-size: 0.75rem; }
     .modal-close {
-        width: 38px;
-        height: 38px;
-        font-size: 1.2rem;
-        top: 14px;
-        right: 14px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+        top: 12px;
+        right: 12px;
     }
     .download-btn {
-        padding: 12px 20px;
-        font-size: 0.75rem;
+        padding: 11px 18px;
+        font-size: 0.72rem;
         letter-spacing: 1.5px;
         gap: 8px;
     }
+
+    /* ── GLITCH — tone down on mobile ── */
+    .glitch::before,
+    .glitch::after {
+        display: none;
+    }
+
+    /* ── TYPEWRITER — shorter on mobile ── */
+    .typewriter-text {
+        white-space: normal;
+        border-right: none;
+        width: auto !important;
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* ── VERY SMALL PHONES: up to 360px ── */
+@media (max-width: 360px) {
+    .logo { font-size: 0.85rem; }
+    .indivi { font-size: 1rem; padding: 0 4px; }
+    .highlight-name { font-size: clamp(1.5rem, 8vw, 2.2rem); }
+    .hero p { font-size: 0.82rem !important; }
+    h2 { font-size: 1.35rem; }
+    .card { padding: 18px 14px; }
+    .counter-num { font-size: 1.2rem; }
+    .resume-btn { padding: 9px 12px; font-size: 0.55rem; }
 }
 
 /* === STAT COUNTERS === */
