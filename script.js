@@ -142,7 +142,7 @@ window.addEventListener('scroll', () => {
             const scrollVal = window.scrollY;
             const bg = document.querySelector('.bg-image');
             if (bg) {
-                bg.style.transform = `translateY(${scrollVal * 0.3}px)`;
+                bg.style.transform = `translateY(${scrollVal * 0.11}px)`;
             }
             ticking = false;
         });
